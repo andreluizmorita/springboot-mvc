@@ -1,0 +1,26 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  outline: 0 !important;
+  -moz-outline-style: none !important;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.t-a-c {
+	text-aling: center;
+}
+.m-t-20 {
+	margin-top: 20px;
+}
+.m-t-30 {
+	margin-top: 30px;
+}
+.m-t-40 {
+	margin-top: 40px;
+}

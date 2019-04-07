@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="LayoutPadrao">
+    
+<head>
+	<title>Pesquisa de títulos</title>
+</head>
+<body>
+	<section layout:fragment="conteudo">
+		<div class="container">
+			<div class="card m-t-30">
+				<div class="card-header">
+				    Pesquisa de títulos
+				    <a class="btn btn-primary btn-sm float-right" href="/titulos/novo">Novo título</a>
+		  		</div>
+			  	<div class="card-body">
+			    	<table class="table table-bordered table-striped table-sm">
+			    		<thead>
+			    			<tr>
+			    				<th class="text-center">#</th>
+			    				<th>Descrição</th>
+			    				<th class="text-center">Vencimento</th>
+			    				<th class="text-center">Valor</th>
+			    				<th class="text-right">Status</th>
+			    				<th class=""></th>
+			    			</tr>
+			    		</thead>
+			    		<tbody>
+			    			<tr>
+			    				<td colspan="6" class="text-center">Nenhum título foi encontrado</td>
+			    			</tr>
+			    			<!-- <tr>
+			    				<td></td>
+			    				<td></td>
+			    				<td></td>
+			    				<td></td>
+			    				<td></td>
+			    				<td></td>
+			    			</tr> -->
+			    		</tbody>
+			    	</table>
+			   	</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
