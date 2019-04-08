@@ -32,28 +32,28 @@
 		   			<div class="form-group row">
 				    	<label for="inputDescricao" class="col-sm-2 col-form-label">Descrição</label>
 					    <div class="col-sm-5">
-					      <input name="descricao" type="text" class="form-control" id="inputDescricao" 
+					      <input name="descricao" th:field="*{descricao}" type="text" class="form-control" id="inputDescricao" 
 					      placeholder="Descrição do título" th:classappend="${#fields.hasErrors('descricao')} ? is-invalid ">
 				    	</div>
 					</div>
 					<div class="form-group row">
 				    	<label for="inputData" class="col-2 col-form-label">Vencimento</label>
 					    <div class="col-5">
-					      <input name="dataVencimento" type="text" class="form-control" id="inputData" 
+					      <input name="dataVencimento" th:field="*{dataVencimento}" type="text" class="form-control" id="inputData" 
 					      	placeholder="Data do vencimento" th:classappend="${#fields.hasErrors('dataVencimento')} ? is-invalid ">
 				    	</div>
 					</div>
 					<div class="form-group row " >
 				    	<label for="inputValor" class="col-2 col-form-label">Valor</label>
 					    <div class="col-5">
-					      <input name="valor" type="text" class="form-control" id="inputValor" 
+					      <input name="valor" th:field="*{valor}" type="text" class="form-control" id="inputValor" 
 					      	placeholder="Valor" th:classappend="${#fields.hasErrors('valor')} ? is-invalid ">
 				    	</div>
 					</div>
 					<div class="form-group row">
 				    	<label for="selectStatus" class="col-2 col-form-label">Status</label>
 					    <div class="col-5">
-					      <select name="status" class="custom-select mr-sm-2" id="selectStatus" th:classappend="${#fields.hasErrors('status')} ? is-invalid ">
+					      <select name="status" th:field="*{status}" class="custom-select mr-sm-2" id="selectStatus" th:classappend="${#fields.hasErrors('status')} ? is-invalid ">
 					        <option th:each="status : ${todosStatusTitulo}" th:value="${status}" th:text="${status.descricao}" ></option>
 					      </select>
 				    	</div>

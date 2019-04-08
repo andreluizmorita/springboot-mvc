@@ -28,16 +28,17 @@ public class Titulo {
 	private Long codigo;
 	
 	@NotEmpty(message = "Descrição é obrigatório")
-	@Size(max = 60, message = "A descrição não pode conter mais que 60 caracteres")
+	@Size(min = 10, max = 10, message = "A descrição não pode conter mais que 60 caracteres")
 	private String descricao;
 	
+	@NotNull(message = "Date de vencimento é obrigatória")
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date dataVencimento;
 	
 	@NotNull(message = "Valor é obrigatório")
 	@DecimalMin(value = "0.01", message = "Valor não pode ser menor que 0,01")
-	// @DecimalMax(value = "9_999_999_999.99", message = "Valor não poser ser maior que 9.999.999.999,00")
+	@DecimalMax(value = "9999999.99", message = "Valor não pode ser maior que 9.999.999,99")
 	@NumberFormat(pattern = "#,##0.00")
 	private BigDecimal valor;
 	
