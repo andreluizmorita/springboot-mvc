@@ -29,6 +29,8 @@
 		  	<div class="card-body">
 			    <p><small>Formulário de cadastro de novo título</small></p>
 		    	<form action="/titulos" method="POST" class="form-horizontal">
+		   			<input type="hidden" th:field="*{codigo}" />
+		   			
 		   			<div class="form-group row">
 				    	<label for="inputDescricao" class="col-sm-2 col-form-label">Descrição</label>
 					    <div class="col-sm-5">
@@ -53,7 +55,8 @@
 					<div class="form-group row">
 				    	<label for="selectStatus" class="col-2 col-form-label">Status</label>
 					    <div class="col-5">
-					      <select name="status" th:field="*{status}" class="custom-select mr-sm-2" id="selectStatus" th:classappend="${#fields.hasErrors('status')} ? is-invalid ">
+					      <select name="status" th:field="*{status}" class="custom-select mr-sm-2" id="selectStatus" 
+					      	th:classappend="${#fields.hasErrors('status')} ? is-invalid ">
 					        <option th:each="status : ${todosStatusTitulo}" th:value="${status}" th:text="${status.descricao}" ></option>
 					      </select>
 				    	</div>

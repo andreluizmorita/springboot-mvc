@@ -28,7 +28,7 @@ public class Titulo {
 	private Long codigo;
 	
 	@NotEmpty(message = "Descrição é obrigatório")
-	@Size(min = 10, max = 10, message = "A descrição não pode conter mais que 60 caracteres")
+	@Size(min = 1, max = 60, message = "A descrição não pode conter mais que 60 caracteres")
 	private String descricao;
 	
 	@NotNull(message = "Date de vencimento é obrigatória")
