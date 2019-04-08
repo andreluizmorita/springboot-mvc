@@ -14,7 +14,9 @@
 			<div class="card m-t-30">
 				<div class="card-header">
 				    Pesquisa de títulos
-				    <a class="btn btn-primary btn-sm float-right" href="/titulos/novo">Novo título</a>
+				    <a class="btn btn-primary btn-sm float-right" href="/titulos/novo">
+				    	<i class="fas fa-plus"></i> Novo título
+				    </a>
 		  		</div>
 			  	<div class="card-body">
 			    	<table class="table table-bordered table-striped table-sm">
@@ -30,15 +32,18 @@
 			    		</thead>
 			    		<tbody>
 			    			<tr th:each="titulo : ${titulos}">
-			    				<td class="text-center" th:text="${titulo.codigo}"></td>
+		    					<td class="text-center" th:text="${titulo.codigo}"></td>
 			    				<td th:text="${titulo.descricao}"></td>
 			    				<td class="text-center" th:text="${{titulo.dataVencimento}}"></td>
 			    				<td class="text-right" th:text="|R$  ${{titulo.valor}}|"></td>
 			    				<td>
-			    					<span class="badge" th:classappend="${titulo.pendente ? 'badge-danger' : 'badge-success' }" th:text="${titulo.status.descricao}"></span>
+			    					<span class="badge" th:text="${titulo.status.descricao}"
+			    						th:classappend="${titulo.pendente ? 'badge-danger' : 'badge-success' }"></span>
 			    				</td>
 			    				<td>
-			    					
+			    					<a th:href="@{/titulos/{codigo}(codigo=${titulo.codigo})}" class="btn btn-sm btn-default">
+			    						<i class="fas fa-pencil-alt"></i>
+			    					</a>
 			    				</td>
 			    			</tr>
 			    			<tr th:if="${#lists.isEmpty(titulos)}">

@@ -114,6 +114,8 @@ public class Titulo {
 		return true;
 	}
 	
-	
+	public String toString() {
+		return "Codigo: " + this.getCodigo() + " Venc: " + this.getDataVencimento() ;
+	}
 	
 }
