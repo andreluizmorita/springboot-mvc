@@ -22,6 +22,20 @@
 				    </a>
 		  		</div>
 			  	<div class="card-body">
+			  		<div class="row">
+				  		<form action="" method="GET" class="col-sm-6" th:object="${filtro}">
+				  			<div class="input-group input-group-sm mb-3">
+						  		<input 
+						  			type="text" autofocus="autofocus" name="descricao" 
+						  			class="form-control" placeholder="Qual título você está procurando"
+						  			th:field="*{descricao}" />
+						  		<div class="input-group-append">
+						    		<button type="submit" class="input-group-text"><i class="fas fa-search"></i></button>
+						  		</div>
+							</div>
+				  		</form>			  		
+			  		</div>
+
 			    	<table class="table table-bordered table-striped table-sm">
 			    		<thead>
 			    			<tr>
