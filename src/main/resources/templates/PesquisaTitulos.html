@@ -45,14 +45,16 @@
 			    				</td>
 			    				<td class="text-center">
 			    					<a 
-		    						 	class="btn btn-sm btn-default btn-link"
+			    						rel="tooltip" data-placement="top" title="Editar"
+		    						 	class="btn btn-sm btn-primary"
 			    						th:href="@{/titulos/{codigo}(codigo=${titulo.codigo})}">
 			    						<i class="fas fa-pencil-alt"></i>
 			    					</a>
 			    					<a 
-		    						 	class="btn btn-sm btn-default btn-link"
-			    						data-toggle="modal" 
-			    						data-target="#confirmarExclusao"
+			    						href="#"
+			    						rel="tooltip" data-placement="top" title="Remover"
+		    						 	class="btn btn-sm btn-primary"
+			    						data-toggle="modal" data-target="#confirmarExclusao"
 			    						th:attr="data-codigo=${titulo.codigo}, data-descricao=${titulo.descricao}">
 			    						<i class="fas fa-trash"></i>
 			    					</a>
