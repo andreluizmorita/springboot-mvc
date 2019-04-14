@@ -40,7 +40,7 @@
 			    				<td class="text-center" th:text="${{titulo.dataVencimento}}"></td>
 			    				<td class="text-right" th:text="|R$  ${{titulo.valor}}|"></td>
 			    				<td>
-			    					<span class="badge" th:text="${titulo.status.descricao}"
+			    					<span th:attr="data-status=${titulo.codigo}" class="badge" th:text="${titulo.status.descricao}"
 			    						th:classappend="${titulo.pendente ? 'badge-danger' : 'badge-success' }"></span>
 			    				</td>
 			    				<td class="text-center">
@@ -53,10 +53,19 @@
 			    					<a 
 			    						href="#"
 			    						rel="tooltip" data-placement="top" title="Remover"
-		    						 	class="btn btn-sm btn-primary"
+		    						 	class="btn btn-sm btn-danger"
 			    						data-toggle="modal" data-target="#confirmarExclusao"
 			    						th:attr="data-codigo=${titulo.codigo}, data-descricao=${titulo.descricao}">
 			    						<i class="fas fa-trash"></i>
+			    					</a>
+			    					<a 
+			    						rel="tooltip" data-placement="top" title="Receber"
+		    						 	class="btn btn-sm btn-primary js-atualizar-status"
+			    						data-toggle="modal" data-target="#confirmarPagamento"
+			    						th:if="${titulo.pendente}"
+			    						th:href="@{/titulos/{codigo}/receber(codigo=${titulo.codigo})}"
+			    						th:attr="data-receber=${titulo.codigo}, data-descricao=${titulo.descricao}">
+			    						<i class="fas fa-check"></i>
 			    					</a>
 			    				</td>
 			    			</tr>
@@ -69,6 +78,8 @@
 			</div>
 			
 			<div layout:replace="ConfirmarExclusao"></div>
+			
+			<div layout:replace="ConfirmarPagamento"></div>
 		</div>
 	</section>
 </body>
