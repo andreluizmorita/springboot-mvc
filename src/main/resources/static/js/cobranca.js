@@ -12,4 +12,10 @@ $(function() {
 		form.attr('action', '/titulos/' + codigoTitulo);
 		body.html(codigoDescricao);
 	});
+	
+	$('#inputValor').maskMoney({
+		decimal: ',',
+		thousands: '.',
+		allowZero: true
+	});
 });
