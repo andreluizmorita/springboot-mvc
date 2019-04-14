@@ -11,6 +11,9 @@
 <body>
 	<section layout:fragment="conteudo">
 		<div class="container">
+			
+			<div layout:replace="Mensagem"></div>
+			
 			<div class="card m-t-30">
 				<div class="card-header">
 				    Pesquisa de títulos
@@ -40,9 +43,20 @@
 			    					<span class="badge" th:text="${titulo.status.descricao}"
 			    						th:classappend="${titulo.pendente ? 'badge-danger' : 'badge-success' }"></span>
 			    				</td>
-			    				<td>
-			    					<a th:href="@{/titulos/{codigo}(codigo=${titulo.codigo})}" class="btn btn-sm btn-default">
+			    				<td class="text-center">
+			    					<a 
+			    						rel="tooltip" data-placement="top" title="Editar"
+		    						 	class="btn btn-sm btn-primary"
+			    						th:href="@{/titulos/{codigo}(codigo=${titulo.codigo})}">
 			    						<i class="fas fa-pencil-alt"></i>
+			    					</a>
+			    					<a 
+			    						href="#"
+			    						rel="tooltip" data-placement="top" title="Remover"
+		    						 	class="btn btn-sm btn-primary"
+			    						data-toggle="modal" data-target="#confirmarExclusao"
+			    						th:attr="data-codigo=${titulo.codigo}, data-descricao=${titulo.descricao}">
+			    						<i class="fas fa-trash"></i>
 			    					</a>
 			    				</td>
 			    			</tr>
@@ -53,6 +67,8 @@
 			    	</table>
 			   	</div>
 			</div>
+			
+			<div layout:replace="ConfirmarExclusao"></div>
 		</div>
 	</section>
 </body>
