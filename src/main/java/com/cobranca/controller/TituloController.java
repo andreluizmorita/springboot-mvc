@@ -2,7 +2,6 @@ package com.cobranca.controller;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -62,6 +61,14 @@ public class TituloController {
 		ModelAndView mv = new ModelAndView(CADASTRO_VIEW);
 		mv.addObject("titulo", titulo);
 		return mv;
+	}
+	
+	@RequestMapping(value = "{codigo}", method = RequestMethod.DELETE)
+	public String excluir(@PathVariable Long codigo, Errors errors, RedirectAttributes attr) {
+		titulos.deleteById(codigo);
+		
+		attr.addFlashAttribute("mensagem", "Título excluído com sucesso!");
+		return "redirect:/titulos";
 	}
 	
 	@ModelAttribute("todosStatusTitulo")

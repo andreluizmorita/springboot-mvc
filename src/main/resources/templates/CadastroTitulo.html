@@ -13,14 +13,9 @@
 
 	<div class="container" th:object="${titulo}">
 		
-		<div class="alert alert-success alert-dismissible m-t-30" role="alert" th:if="${!#strings.isEmpty(mensagem)}">	
-			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			    <span aria-hidden="true">&times;</span>
-		  	</button>
-  			<span th:text="${mensagem}"></span>
-  		</div>
-  		
 		<div layout:replace="Mensagem"></div>
+  		
+		<div layout:replace="MensagemErros"></div>
 	    		
 		<div class="card m-t-30">
 			<div class="card-header">
